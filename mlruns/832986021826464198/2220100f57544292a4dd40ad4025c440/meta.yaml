@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/2220100f57544292a4dd40ad4025c440/artifacts
+end_time: 1751651880981
+entry_point_name: ''
+experiment_id: '832986021826464198'
+lifecycle_stage: active
+run_id: 2220100f57544292a4dd40ad4025c440
+run_name: persistent-koi-30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751651875627
+status: 3
+tags: []
+user_id: vishwajeet

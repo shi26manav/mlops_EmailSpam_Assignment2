@@ -1,0 +1,6 @@
+artifact_location: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198
+creation_time: 1751651857340
+experiment_id: '832986021826464198'
+last_update_time: 1751651857340
+lifecycle_stage: active
+name: spam_classification_nb

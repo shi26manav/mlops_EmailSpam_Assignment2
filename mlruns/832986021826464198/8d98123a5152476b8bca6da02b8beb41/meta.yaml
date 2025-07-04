@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/8d98123a5152476b8bca6da02b8beb41/artifacts
+end_time: 1751651875621
+entry_point_name: ''
+experiment_id: '832986021826464198'
+lifecycle_stage: active
+run_id: 8d98123a5152476b8bca6da02b8beb41
+run_name: intrigued-hen-959
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751651870206
+status: 3
+tags: []
+user_id: vishwajeet

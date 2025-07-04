@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/e7d6f0f1fff943f1b820b0aa34ac3696/artifacts
+end_time: 1751652133198
+entry_point_name: ''
+experiment_id: '832986021826464198'
+lifecycle_stage: active
+run_id: e7d6f0f1fff943f1b820b0aa34ac3696
+run_name: lyrical-ram-356
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751652128003
+status: 3
+tags: []
+user_id: vishwajeet

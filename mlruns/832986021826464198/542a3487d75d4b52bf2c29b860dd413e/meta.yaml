@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/542a3487d75d4b52bf2c29b860dd413e/artifacts
+end_time: 1751652127997
+entry_point_name: ''
+experiment_id: '832986021826464198'
+lifecycle_stage: active
+run_id: 542a3487d75d4b52bf2c29b860dd413e
+run_name: luxuriant-shrike-968
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751652122816
+status: 3
+tags: []
+user_id: vishwajeet

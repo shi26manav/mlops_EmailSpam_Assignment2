@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/4f90e517ee124fb487ea7b09a5ce4810/artifacts
+end_time: 1751652154318
+entry_point_name: ''
+experiment_id: '832986021826464198'
+lifecycle_stage: active
+run_id: 4f90e517ee124fb487ea7b09a5ce4810
+run_name: painted-croc-342
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751652149177
+status: 3
+tags: []
+user_id: vishwajeet

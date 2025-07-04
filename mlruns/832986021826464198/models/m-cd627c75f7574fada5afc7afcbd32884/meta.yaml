@@ -1,0 +1,10 @@
+artifact_location: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/models/m-cd627c75f7574fada5afc7afcbd32884/artifacts
+creation_timestamp: 1751651891704
+experiment_id: '832986021826464198'
+last_updated_timestamp: 1751651894153
+model_id: m-cd627c75f7574fada5afc7afcbd32884
+model_type: null
+name: model
+source_run_id: ec93052e4ca64a97b810160b8f334454
+status: 2
+status_message: null

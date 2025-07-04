@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/56dcca47d5ab42169d31731622f0d02a/artifacts
+end_time: 1751651863882
+entry_point_name: ''
+experiment_id: '832986021826464198'
+lifecycle_stage: active
+run_id: 56dcca47d5ab42169d31731622f0d02a
+run_name: serious-lamb-501
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751651857571
+status: 3
+tags: []
+user_id: vishwajeet
