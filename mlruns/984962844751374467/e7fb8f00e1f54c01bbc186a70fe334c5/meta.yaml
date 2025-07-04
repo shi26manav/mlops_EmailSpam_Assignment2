@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/VNIT/Semester2/mlops/Assignment2/mlops_EmailSpam_Assignment2/mlruns/984962844751374467/e7fb8f00e1f54c01bbc186a70fe334c5/artifacts
+end_time: 1751661310901
+entry_point_name: ''
+experiment_id: '984962844751374467'
+lifecycle_stage: active
+run_id: e7fb8f00e1f54c01bbc186a70fe334c5
+run_name: mercurial-wren-493
+run_uuid: e7fb8f00e1f54c01bbc186a70fe334c5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751661310787
+status: 4
+tags: []
+user_id: DELL
