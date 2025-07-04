@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/9e44bc75583f458593f90225eabaa81c/artifacts
+end_time: 1751652138490
+entry_point_name: ''
+experiment_id: '832986021826464198'
+lifecycle_stage: active
+run_id: 9e44bc75583f458593f90225eabaa81c
+run_name: auspicious-vole-864
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751652133203
+status: 3
+tags: []
+user_id: vishwajeet

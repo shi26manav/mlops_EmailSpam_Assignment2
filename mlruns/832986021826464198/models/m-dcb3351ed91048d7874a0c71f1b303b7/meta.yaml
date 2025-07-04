@@ -1,0 +1,10 @@
+artifact_location: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/models/m-dcb3351ed91048d7874a0c71f1b303b7/artifacts
+creation_timestamp: 1751651861410
+experiment_id: '832986021826464198'
+last_updated_timestamp: 1751651863876
+model_id: m-dcb3351ed91048d7874a0c71f1b303b7
+model_type: null
+name: vectorizer
+source_run_id: 56dcca47d5ab42169d31731622f0d02a
+status: 2
+status_message: null

@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/4d76d9f926c34328b27f8df8d06cd1e7/artifacts
+end_time: 1751651886436
+entry_point_name: ''
+experiment_id: '832986021826464198'
+lifecycle_stage: active
+run_id: 4d76d9f926c34328b27f8df8d06cd1e7
+run_name: exultant-kite-768
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751651880990
+status: 3
+tags: []
+user_id: vishwajeet

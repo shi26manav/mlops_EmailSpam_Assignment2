@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/29fec932b6fc418baae735b6719b4ac6/artifacts
+end_time: 1751651870198
+entry_point_name: ''
+experiment_id: '832986021826464198'
+lifecycle_stage: active
+run_id: 29fec932b6fc418baae735b6719b4ac6
+run_name: rogue-calf-403
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751651863888
+status: 3
+tags: []
+user_id: vishwajeet

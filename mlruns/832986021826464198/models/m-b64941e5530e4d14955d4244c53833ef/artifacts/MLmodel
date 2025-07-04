@@ -1,0 +1,14 @@
+artifact_path: file:///c:/Users/vishw/OneDrive/Documents/intellipaat%20mtech/sem2_sub/deployment%20of%20ml%20models/git%20demo/mlops_EmailSpam_Assignment2/mlruns/832986021826464198/models/m-b64941e5530e4d14955d4244c53833ef/artifacts
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.0
+mlflow_version: 3.1.1
+model_id: m-b64941e5530e4d14955d4244c53833ef
+model_size_bytes: 702594
+model_uuid: m-b64941e5530e4d14955d4244c53833ef
+prompts: null
+run_id: 732bef799e974132ab67e3685142f908
+utc_time_created: '2025-07-04 18:02:26.800586'
