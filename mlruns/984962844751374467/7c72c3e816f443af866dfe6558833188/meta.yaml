@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/VNIT/Semester2/mlops/Assignment2/mlops_EmailSpam_Assignment2/mlruns/984962844751374467/7c72c3e816f443af866dfe6558833188/artifacts
+end_time: 1751662401491
+entry_point_name: ''
+experiment_id: '984962844751374467'
+lifecycle_stage: active
+run_id: 7c72c3e816f443af866dfe6558833188
+run_name: nervous-snipe-885
+run_uuid: 7c72c3e816f443af866dfe6558833188
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751662396817
+status: 3
+tags: []
+user_id: DELL
