@@ -14,13 +14,9 @@ def get_best_model_params():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
-    
-    if not data or 'text' not in data:
-        return jsonify({"error": "Missing 'text' field in request"}), 400
     text = data['text']
-    prediction = model.predict([text])[0]  # model handles vectorization
+    prediction = model.predict([text])[0]
     label = "spam" if prediction == 1 else "ham"
-
     return jsonify({"prediction": label})
 
 
