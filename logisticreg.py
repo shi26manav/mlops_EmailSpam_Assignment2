@@ -9,6 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import joblib
 import mlflow
+from mlflow.models import infer_signature
 
 import mlflow.sklearn
 import os
@@ -19,6 +20,8 @@ def perform_random_search(X_train, y_train):
     Performs randomized hyperparameter tuning for Logistic Regression.
     Returns best model and best parameters.
     """
+    # count_vect=CountVectorizer()
+
     pipeline = Pipeline([
         ('vectorizer', CountVectorizer()),
         ('clf', LogisticRegression(solver="liblinear", max_iter=1000))
@@ -46,7 +49,14 @@ def perform_random_search(X_train, y_train):
 
     save_path = "saved_models/roc_curve.png"
 
+    # save_model(best_model, path="saved_models/best_model.pkl")
+
     search.fit(X_train, y_train)
+       # Save the best CountVectorizer 
+    best_vectorizer = search.best_estimator_.named_steps['vectorizer']
+    with open("saved_models/count_vectorizer.pkl", "wb") as vec_file:
+        joblib.dump(best_vectorizer, vec_file)
+
     return search.best_estimator_, search.best_params_
 
 def evaluate_classification(model, X_test, y_test):
@@ -101,25 +111,88 @@ def save_model(model, path):
     print(f"[INFO] Model saved to {path}")
 
 
+  
 
-def log_to_mlflow(model, params, metrics, roc_curve_path):
+
+
+
+# def log_to_mlflow(model, params, metrics, roc_curve_path, input_example):
+#     """
+#     Logs model, metrics, and ROC curve to MLflow.
+#     """
+#     mlflow.set_experiment("SpamClassifier_LogisticRegression_Tuning")
+#     with mlflow.start_run():
+#         mlflow.log_params(params)
+#         mlflow.log_metrics({
+#             "accuracy": metrics["accuracy"],
+#             "precision": metrics["precision"],
+#             "recall": metrics["recall"],
+#             "f1_score": metrics["f1_score"],
+#             "auc_roc": metrics["auc_roc"] if metrics["auc_roc"] else 0
+#         })
+#         if roc_curve_path:
+#             if roc_curve_path and os.path.exists(roc_curve_path):
+#                 mlflow.log_artifact(roc_curve_path)
+#             else:
+#                 print(f"[WARNING] ROC curve file not found: {roc_curve_path}")
+#             # mlflow.log_artifact(roc_curve_path)
+#          # Prepare input example for signature
+#         input_example = pd.DataFrame({"text": [sample_input_text]})
+#         prediction_example = model.predict(input_example["text"])
+#         signature = infer_signature(input_example, prediction_example)
+
+#          # Log the model with input example and signature
+#         mlflow.sklearn.log_model(
+#             sk_model=model,
+#             artifact_path="logistic_regression_model",
+#             input_example=input_example,
+#             signature=signature
+#         )
+#         mlflow.sklearn.log_model(model, "logistic_regression_model")
+
+import mlflow
+import mlflow.sklearn
+from mlflow.models import infer_signature
+import pandas as pd
+import os
+
+def log_to_mlflow(model, params, metrics, roc_curve_path, input_example):
     """
-    Logs model, metrics, and ROC curve to MLflow.
+    Logs model, metrics, and ROC curve to MLflow, using the provided input example.
     """
     mlflow.set_experiment("SpamClassifier_LogisticRegression_Tuning")
+
     with mlflow.start_run():
+        # Log model hyperparameters
         mlflow.log_params(params)
+
+        # Log evaluation metrics safely
         mlflow.log_metrics({
-            "accuracy": metrics["accuracy"],
-            "precision": metrics["precision"],
-            "recall": metrics["recall"],
-            "f1_score": metrics["f1_score"],
-            "auc_roc": metrics["auc_roc"] if metrics["auc_roc"] else 0
+            "accuracy": metrics.get("accuracy", 0),
+            "precision": metrics.get("precision", 0),
+            "recall": metrics.get("recall", 0),
+            "f1_score": metrics.get("f1_score", 0),
+            "auc_roc": metrics.get("auc_roc", 0)
         })
-        if roc_curve_path:
-            if roc_curve_path and os.path.exists(roc_curve_path):
-                mlflow.log_artifact(roc_curve_path)
-            else:
-                print(f"[WARNING] ROC curve file not found: {roc_curve_path}")
-            # mlflow.log_artifact(roc_curve_path)
-        mlflow.sklearn.log_model(model, "logistic_regression_model")
+
+        # Log ROC curve if it exists
+        if roc_curve_path and os.path.exists(roc_curve_path):
+            mlflow.log_artifact(roc_curve_path)
+        else:
+            print(f"[WARNING] ROC curve file not found: {roc_curve_path}")
+
+        # Use passed input_example to infer signature
+        try:
+            prediction_example = model.predict(input_example["text"])
+            signature = infer_signature(input_example, prediction_example)
+
+            mlflow.sklearn.log_model(
+                sk_model=model,
+                artifact_path="logistic_regression_model",
+                input_example=input_example,
+                signature=signature
+            )
+            print("[MLflow] Model logged with input example and signature.")
+        except Exception as e:
+            print(f"[WARNING] Could not infer signature or log model with input example: {e}")
+            mlflow.sklearn.log_model(model, "logistic_regression_model")
