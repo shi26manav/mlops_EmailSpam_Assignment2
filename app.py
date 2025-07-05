@@ -3,21 +3,13 @@ import pickle
 import joblib
 
 app = Flask(__name__)
-
-
 model = joblib.load("best_model.pkl")
 vectorizer = joblib.load("count_vectorizer.pkl")
-
-
 @app.route('/best_model_hyperparameters', methods=['GET'])
 def get_best_model_params():
-    try:
         all_params = model.get_params()
         clf_params = {k.replace("clf__", ""): v for k, v in all_params.items() if k.startswith("clf__")}
         return jsonify(clf_params)
-    except Exception as e:
-        return {"error": str(e)}
-
 
 @app.route('/predict', methods=['POST'])
 def predict():
