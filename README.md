@@ -84,8 +84,6 @@ A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 
 ---
 
-##  Dockerized Deployment
-
 
 ### Build Docker Image
 ```bash
@@ -93,18 +91,23 @@ A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 
 ## RUN the container from image
 - docker run -p 5001:5001 dockerhub_username/sms_spam_api
-![Screenshot to Docker Image on Docker Desktop UI](screenshots/username-tag image.png)
+![Screenshot to Docker Image on Docker Desktop UI](screenshots/username-tag.png)
 
 ## PUSH to Docker Hub
 - docker push dockerhub_username/sms_spam_api
-![Screenshot 2025-07-06 081826](https://github.com/user-attachments/assets/b28650e4-18c1-41e7-b266-65d27504d1e0)
+![Screenshot to DockerHub](screenshots/dockerhub.png)
 
 
 ## PULL and RUN FROM Docker Hub
 - docker pull dockerhub_username/sms_spam_api
 - docker run -p 5001:5001 dockerhub_username/sms_spam_api
-![Screenshot 2025-07-06 081628](https://github.com/user-attachments/assets/f63013b6-ea8c-4d57-85a2-fa9950895889)
+![Screenshot to PULL Image ](screenshots/pull-image.png)
+![Screenshot to RUN container](screenshots/run-container.png)
+```
 
 
+##  Dockerized Deployment
+![Screenshot to prediction](screenshots/predict-api.png)
+![Screenshot to Best Hyper parameters](screenshots/model-hyperparameters.png)
 
 
