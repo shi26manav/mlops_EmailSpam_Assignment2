@@ -46,7 +46,8 @@ Request Body: Not required
 
 ********************************************************************
 
-# 2. Steps to Accomplish Tasks
+
+# 2. **Steps to Accomplish Tasks**
  
 #  Email Spam Classifier with Flask API & Docker Deployment
 
