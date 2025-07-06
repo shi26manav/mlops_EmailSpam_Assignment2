@@ -31,10 +31,12 @@ def predict():
 
 @app.route('/training', methods=['POST'])
 def train():
-    dataset_path = 'Dataset/emails.csv'
+    dataset_path = 'Dataset/train.csv'
     df = pd.read_csv(dataset_path)
     df.columns = df.columns.str.strip().str.lower()
-    df.rename(columns={'text': 'texts', 'spam': 'labels'}, inplace=True)
+
+    # Updated column renaming
+    df.rename(columns={'sms': 'texts', 'label': 'labels'}, inplace=True)
 
     X, y = df['texts'], df['labels']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -56,6 +58,7 @@ def train():
     return jsonify({
         "message": "Model retrained using Logistic Regression."
     })
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False, port=5001)
