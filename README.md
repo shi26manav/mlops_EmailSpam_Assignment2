@@ -1,7 +1,12 @@
 # mlops_SmsSpam_Assignment2
-Sms Spam Detection
+SMS Spam Detection using ML, Flask, and Docker
 
-## DockerHub Link
+1. [Docker Hub Repository]  Docker Hub Link
+2. [Steps to Accomplish Tasks]
+
+   
+
+# 1. Docker Hub Link
 
 **Docker Image:**  
 https://hub.docker.com/r/vishwajeetyadav3597/sms_spam_api
