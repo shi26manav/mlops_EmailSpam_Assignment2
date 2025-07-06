@@ -45,6 +45,9 @@ URL: http://127.0.0.1:5001/best_model_parameter
 Request Body: Not required
 
 ********************************************************************
+
+# 2. Steps to Accomplish Tasks
+ 
 #  Email Spam Classifier with Flask API & Docker Deployment
 
 ##  Model Training Approaches
