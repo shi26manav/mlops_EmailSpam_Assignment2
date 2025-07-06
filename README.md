@@ -65,7 +65,7 @@ Request Body: Not required
 **Evaluation Metrics**: Accuracy, Precision, Recall, F1-Score, ROC-AUC  
 **Selected Combination**: `LogisticRegression + CountVectorizer`  
 **Key Files**: `logisticreg.py`, `main.py`
-### roc-auc Curve
+#### Screenshot - roc-auc Curve
 ![Screenshot to ROC CURVE](saved_models/roc.png)
 
 ------------------------------------------------------------------
@@ -88,11 +88,16 @@ END POINTS and how to USE
 ### POST `/prediction`
 - **Description**: Predict SMS spam/not spam  
 - **Input**: JSON `{ "text": "your message" }`  
-- **Response**: JSON `{ "prediction": "spam" | "not spam" }`  
+- **Response**: JSON `{ "prediction": "spam" | "not spam" }`
+  #### Screenshot to Predict
+![Screenshot to prediction](screenshots/predict-api.png)
+
 
 ###  GET `/best_model_parameter`
 - **Description**: Returns best parameters (from Grid/RandomizedSearchCV)  
-- **Response**: JSON of hyperparameters  
+- **Response**: JSON of hyperparameters
+  #### Screenshot to Best HyperParameter
+![Screenshot to Best Hyper parameters](screenshots/model-hyperparameters.png)
 
 ###  POST `/training`
 - **Description**: Trains model using predefined dataset path  
@@ -139,9 +144,6 @@ END POINTS and how to USE
 
 
 ##  Dockerized Deployment
-## Screenshot to Predict
-![Screenshot to prediction](screenshots/predict-api.png)
-## Screenshot to Best HyperParameter
-![Screenshot to Best Hyper parameters](screenshots/model-hyperparameters.png)
+
 
 
