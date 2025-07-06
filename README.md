@@ -3,6 +3,12 @@ SMS Spam Detection using ML, Flask, and Docker
 
 1. [Docker Hub Repository]  Docker Hub Link
 2. [Steps to Accomplish Tasks]
+   **(i)   Model Training Approaches**
+   **(ii)  HyperParameter Tuning and logging experiment using MLFlow**
+   **(iii) Creating API Endpoints using Flask (Flask REST API)**
+   **(iv)  Build Docker Image and RUN Container**
+   **(v)   PUSH to Docker Hub**
+   **(vi)  PULL and RUN FROM Docker Hub**
 
    
 
@@ -60,17 +66,25 @@ Request Body: Not required
 **Selected Combination**: `LogisticRegression + CountVectorizer`  
 **Key Files**: `logisticreg.py`, `main.py`
 ### roc-auc Curve
-![Screenshot to DockerHub](screenshots/roc_curve.png)
+![Screenshot to ROC CURVE](screenshots/roc_curve.png)
+
 ------------------------------------------------------------------
 ### (ii) HyperParameter Tuning and logging experiment using MLFlow
-
 ------------------------------------------------------------------
 
+![Screenshot to MLFlow](screenshots/mlflow_UI.png)
+
+
+
+
 --------------------------------------------------
-###  (iii) Creating API Endpoints (Flask REST API)
+###  (iii) Creating API Endpoints using Flask (Flask REST API)
 --------------------------------------------------
 A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 
+------------------------------------
+END POINTS and how to USE
+------------------------------------
 ### POST `/prediction`
 - **Description**: Predict SMS spam/not spam  
 - **Input**: JSON `{ "text": "your message" }`  
@@ -87,30 +101,34 @@ A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 - **Input**: JSON `{  "C": 0.4,  "max_iter": 250,  "solver": "liblinear"}`
 - **Response**: JSON `{"message": "Model retrained using Logistic Regression."}`
 
----
+---------------------------------------------
+### (iv) Build Docker Image and RUN Container
+--------------------------------------------
 
+### BUILD IMAGE
 
-### (iv) Build Docker Image
 ```bash
 - docker build -t dockerhub_username/sms_spam_api .
 ```
 ![Screenshot to Docker Image on Docker Desktop UI](screenshots/username-tag.png)
 
-### RUN the container from image
+### RUN the CONTAINER from IMAGE
 ```bash
 - docker run -p 5001:5001 dockerhub_username/sms_spam_api
 ```
 ![Screenshot to RUN container](screenshots/run-container.png)
 
-
+---------------------------------------
 ### (v) PUSH to Docker Hub
+--------------------------------------
 ```bash
 - docker push dockerhub_username/sms_spam_api
 ```
 ![Screenshot to DockerHub](screenshots/dockerhub.png)
 
-
+------------------------------------------
 ### (vi) PULL and RUN FROM Docker Hub
+------------------------------------------
 ```bash
 - docker pull dockerhub_username/sms_spam_api
 - docker run -p 5001:5001 dockerhub_username/sms_spam_api
