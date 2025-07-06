@@ -1,4 +1,4 @@
-# mlops_EmailSpam_Assignment2
+# mlops_SmsSpam_Assignment2
 Email Spam Detection
 
 ## DockerHub Link
