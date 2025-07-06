@@ -31,7 +31,7 @@ def predict():
 
 @app.route('/training', methods=['POST'])
 def train():
-    dataset_path = 'Dataset/emails.csv'
+    dataset_path = 'Dataset/sms.csv'
     df = pd.read_csv(dataset_path)
     df.columns = df.columns.str.strip().str.lower()
     df.rename(columns={'text': 'texts', 'spam': 'labels'}, inplace=True)
