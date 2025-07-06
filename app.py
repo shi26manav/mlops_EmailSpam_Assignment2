@@ -31,31 +31,27 @@ def predict():
 
 @app.route('/training', methods=['POST'])
 def train():
-    dataset_path = 'Dataset/sms.csv'
+    dataset_path = 'Dataset/train.csv' 
     df = pd.read_csv(dataset_path)
     df.columns = df.columns.str.strip().str.lower()
-    df.rename(columns={'text': 'texts', 'spam': 'labels'}, inplace=True)
-
+    df.rename(columns={'sms': 'texts', 'label': 'labels'}, inplace=True)
     X, y = df['texts'], df['labels']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
     hyperparams = request.get_json() or {}
     valid_params = ['C', 'max_iter', 'solver', 'penalty', 'random_state', 'tol']
     logreg_params = {param: hyperparams[param] for param in valid_params if param in hyperparams}
-
     pipeline = Pipeline([
         ('vectorizer', CountVectorizer(lowercase=True)),
         ('logreg', LogisticRegression(**logreg_params))
     ])
-
     pipeline.fit(X_train, y_train)
-
     os.makedirs("saved_models", exist_ok=True)
     joblib.dump(pipeline, "saved_models/new_best_model.pkl")
-
     return jsonify({
         "message": "Model retrained using Logistic Regression."
     })
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False, port=5001)
