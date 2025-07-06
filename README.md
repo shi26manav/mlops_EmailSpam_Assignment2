@@ -49,9 +49,9 @@ Request Body: Not required
 
 # 2. **Steps to Accomplish Tasks**
  
-#  Email Spam Classifier with Flask API & Docker Deployment
+##  Email Spam Classifier with Flask API & Docker Deployment
 
-##  Model Training Approaches
+###  Model Training Approaches
 
 -   **Multinomial Naive Bayes** with `TfidfVectorizer`
 -   **Logistic Regression** with `CountVectorizer`  *(Selected)*
