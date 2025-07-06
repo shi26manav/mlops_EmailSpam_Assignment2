@@ -62,7 +62,7 @@ Request Body: Not required
 
 ---
 
-##  API Endpoints (Flask REST API)
+###  API Endpoints (Flask REST API)
 
 A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 
@@ -91,21 +91,21 @@ A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 ```
 ![Screenshot to Docker Image on Docker Desktop UI](screenshots/username-tag.png)
 
-## RUN the container from image
+### RUN the container from image
 ```bash
 - docker run -p 5001:5001 dockerhub_username/sms_spam_api
 ```
 ![Screenshot to RUN container](screenshots/run-container.png)
 
 
-## PUSH to Docker Hub
+### PUSH to Docker Hub
 ```bash
 - docker push dockerhub_username/sms_spam_api
 ```
 ![Screenshot to DockerHub](screenshots/dockerhub.png)
 
 
-## PULL and RUN FROM Docker Hub
+### PULL and RUN FROM Docker Hub
 ```bash
 - docker pull dockerhub_username/sms_spam_api
 - docker run -p 5001:5001 dockerhub_username/sms_spam_api
