@@ -59,7 +59,7 @@ Request Body: Not required
 **Evaluation Metrics**: Accuracy, Precision, Recall, F1-Score, ROC-AUC  
 **Selected Combination**: `LogisticRegression + CountVectorizer`  
 **Key Files**: `logisticreg.py`, `main.py`
-
+```
 ---
 
 ##  API Endpoints (Flask REST API)
@@ -87,7 +87,7 @@ A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 ##  Dockerized Deployment
 
 ### Build Docker Image
-
+```bash
 - docker build -t dockerhub_username/sms_spam_api .
 
 ## RUN the container from image
