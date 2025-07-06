@@ -51,7 +51,7 @@ Request Body: Not required
  
 ##  Email Spam Classifier with Flask API & Docker Deployment
 
-###  Model Training Approaches
+### (i) Model Training Approaches
 
 -   **Multinomial Naive Bayes** with `TfidfVectorizer`
 -   **Logistic Regression** with `CountVectorizer`  *(Selected)*
@@ -59,11 +59,16 @@ Request Body: Not required
 **Evaluation Metrics**: Accuracy, Precision, Recall, F1-Score, ROC-AUC  
 **Selected Combination**: `LogisticRegression + CountVectorizer`  
 **Key Files**: `logisticreg.py`, `main.py`
+### roc-auc Curve
+![Screenshot to DockerHub](screenshots/roc_curve.png)
+------------------------------------------------------------------
+### (ii) HyperParameter Tuning and logging experiment using MLFlow
 
----
+------------------------------------------------------------------
 
-###  API Endpoints (Flask REST API)
-
+--------------------------------------------------
+###  (iii) Creating API Endpoints (Flask REST API)
+--------------------------------------------------
 A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 
 ### POST `/prediction`
@@ -85,7 +90,7 @@ A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 ---
 
 
-### Build Docker Image
+### (iv) Build Docker Image
 ```bash
 - docker build -t dockerhub_username/sms_spam_api .
 ```
@@ -98,14 +103,14 @@ A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 ![Screenshot to RUN container](screenshots/run-container.png)
 
 
-### PUSH to Docker Hub
+### (v) PUSH to Docker Hub
 ```bash
 - docker push dockerhub_username/sms_spam_api
 ```
 ![Screenshot to DockerHub](screenshots/dockerhub.png)
 
 
-### PULL and RUN FROM Docker Hub
+### (vi) PULL and RUN FROM Docker Hub
 ```bash
 - docker pull dockerhub_username/sms_spam_api
 - docker run -p 5001:5001 dockerhub_username/sms_spam_api
