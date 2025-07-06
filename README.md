@@ -93,7 +93,7 @@ A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
 
 ## RUN the container from image
 - docker run -p 5001:5001 dockerhub_username/sms_spam_api
-![Screenshot to Docker Image on Docker Desktop UI](screenshots/username-tag image)
+![Screenshot to Docker Image on Docker Desktop UI](screenshots/username-tag image.png)
 
 ## PUSH to Docker Hub
 - docker push dockerhub_username/sms_spam_api
