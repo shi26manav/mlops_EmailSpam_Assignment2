@@ -9,6 +9,7 @@ SMS Spam Detection using ML, Flask, and Docker
    - **(iv)  Build Docker Image and RUN Container**
    - **(v)   PUSH to Docker Hub**
    - **(vi)  PULL and RUN FROM Docker Hub**
+   - **(vii) Dockerized USE of API**
 
    
 
@@ -89,15 +90,13 @@ END POINTS and how to USE
 - **Description**: Predict SMS spam/not spam  
 - **Input**: JSON `{ "text": "your message" }`  
 - **Response**: JSON `{ "prediction": "spam" | "not spam" }`
-  #### Screenshot to Predict
-![Screenshot to prediction](screenshots/predict-api.png)
+
 
 
 ###  GET `/best_model_parameter`
 - **Description**: Returns best parameters (from Grid/RandomizedSearchCV)  
 - **Response**: JSON of hyperparameters
-  #### Screenshot to Best HyperParameter
-![Screenshot to Best Hyper parameters](screenshots/model-hyperparameters.png)
+
 
 ###  POST `/training`
 - **Description**: Trains model using predefined dataset path  
@@ -143,7 +142,11 @@ END POINTS and how to USE
 
 
 
-##  Dockerized Deployment
+##  Dockerized USE of API
+  #### Screenshot to Predict
+![Screenshot to prediction](screenshots/predict-api.png)
+  #### Screenshot to Best HyperParameter
+![Screenshot to Best Hyper parameters](screenshots/model-hyperparameters.png)
 
 
 
