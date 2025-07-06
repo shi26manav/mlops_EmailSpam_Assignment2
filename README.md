@@ -66,7 +66,7 @@ Request Body: Not required
 **Selected Combination**: `LogisticRegression + CountVectorizer`  
 **Key Files**: `logisticreg.py`, `main.py`
 ### roc-auc Curve
-![Screenshot to ROC CURVE](saved_models/roc_curve.png)
+![Screenshot to ROC CURVE](saved_models/roc.png)
 
 ------------------------------------------------------------------
 ### (ii) HyperParameter Tuning and logging experiment using MLFlow
