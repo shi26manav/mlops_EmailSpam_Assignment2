@@ -39,3 +39,57 @@ URL: http://127.0.0.1:5001/best_model_parameter
 
 Request Body: Not required
 
+********************************************************************
+#  Email Spam Classifier with Flask API & Docker Deployment
+
+##  Model Training Approaches
+
+-   **Multinomial Naive Bayes** with `TfidfVectorizer`
+-   **Logistic Regression** with `CountVectorizer`  *(Selected)*
+
+**Evaluation Metrics**: Accuracy, Precision, Recall, F1-Score, ROC-AUC  
+**Selected Combination**: `LogisticRegression + CountVectorizer`  
+**Key Files**: `logisticreg.py`, `main.py`
+
+---
+
+##  API Endpoints (Flask REST API)
+
+A lightweight RESTful API to classify SMS messages as **Spam** or **Not Spam**.
+
+### POST `/prediction`
+- **Description**: Predict SMS spam/not spam  
+- **Input**: JSON `{ "text": "your message" }`  
+- **Response**: JSON `{ "prediction": "spam" | "not spam" }`  
+
+###  GET `/best_model_parameter`
+- **Description**: Returns best parameters (from Grid/RandomizedSearchCV)  
+- **Response**: JSON of hyperparameters  
+
+###  POST `/training`
+- **Description**: Trains model using predefined dataset path  
+- **Note**: Dataset path is hardcoded in script
+
+- **Input**: JSON `{  "C": 0.4,  "max_iter": 250,  "solver": "liblinear"}`
+- **Response**: JSON `{"message": "Model retrained using Logistic Regression."}`
+
+---
+
+##  Dockerized Deployment
+
+### Build Docker Image
+
+- docker build -t dockerhub_username/sms_spam_api .
+
+## RUN the container from image
+docker run -p 5001:5001 dockerhub_username/sms_spam_api
+
+## PUSH to Docker Hub
+- docker push dockerhub_username/sms_spam_api
+
+## PULL and RUN FROM Docker Hub
+- docker pull dockerhub_username/sms_spam_api
+- docker run -p 5001:5001 dockerhub_username/sms_spam_api
+
+
+
