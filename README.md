@@ -3,12 +3,12 @@ SMS Spam Detection using ML, Flask, and Docker
 
 1. [Docker Hub Repository]  Docker Hub Link
 2. [Steps to Accomplish Tasks]
-   **(i)   Model Training Approaches**
-   **(ii)  HyperParameter Tuning and logging experiment using MLFlow**
-   **(iii) Creating API Endpoints using Flask (Flask REST API)**
-   **(iv)  Build Docker Image and RUN Container**
-   **(v)   PUSH to Docker Hub**
-   **(vi)  PULL and RUN FROM Docker Hub**
+   - **(i)   Model Training Approaches**
+   - **(ii)  HyperParameter Tuning and logging experiment using MLFlow**
+   - **(iii) Creating API Endpoints using Flask (Flask REST API)**
+   - **(iv)  Build Docker Image and RUN Container**
+   - **(v)   PUSH to Docker Hub**
+   - **(vi)  PULL and RUN FROM Docker Hub**
 
    
 
@@ -66,7 +66,7 @@ Request Body: Not required
 **Selected Combination**: `LogisticRegression + CountVectorizer`  
 **Key Files**: `logisticreg.py`, `main.py`
 ### roc-auc Curve
-![Screenshot to ROC CURVE](screenshots/roc_curve.png)
+![Screenshot to ROC CURVE](saved_models/roc_curve.png)
 
 ------------------------------------------------------------------
 ### (ii) HyperParameter Tuning and logging experiment using MLFlow
