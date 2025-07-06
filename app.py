@@ -31,7 +31,7 @@ def predict():
 
 @app.route('/training', methods=['POST'])
 def train():
-    dataset_path = 'Dataset/train.csv'
+    dataset_path = 'Dataset/train.csv' 
     df = pd.read_csv(dataset_path)
     df.columns = df.columns.str.strip().str.lower()
     df.rename(columns={'sms': 'texts', 'label': 'labels'}, inplace=True)
@@ -50,6 +50,7 @@ def train():
     return jsonify({
         "message": "Model retrained using Logistic Regression."
     })
+
 
 
 if __name__ == '__main__':
