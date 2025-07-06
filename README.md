@@ -147,6 +147,8 @@ END POINTS and how to USE
 ![Screenshot to prediction](screenshots/predict-api.png)
   #### Screenshot to Best HyperParameter
 ![Screenshot to Best Hyper parameters](screenshots/model-hyperparameters.png)
+  #### Training
+  Usage As mentioned in [Docker Hub Link] Serial No- 1 At the top
 
 
 
