@@ -43,7 +43,7 @@ Request Type: GET
 URL: http://127.0.0.1:5001/best_model_parameter
 
 Request Body: Not required
-
+```
 ********************************************************************
 
 
@@ -59,7 +59,7 @@ Request Body: Not required
 **Evaluation Metrics**: Accuracy, Precision, Recall, F1-Score, ROC-AUC  
 **Selected Combination**: `LogisticRegression + CountVectorizer`  
 **Key Files**: `logisticreg.py`, `main.py`
-```
+
 ---
 
 ##  API Endpoints (Flask REST API)
