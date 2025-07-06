@@ -12,7 +12,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 
 app = Flask(__name__)
+
 model = joblib.load("best_model.pkl")
+print("Model type:", type(model))
 vectorizer = joblib.load("count_vectorizer.pkl")
 @app.route('/best_model_hyperparameters', methods=['GET'])
 def get_best_model_params():
@@ -90,4 +92,4 @@ def train():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(host='0.0.0.0', debug=True, port=5001)

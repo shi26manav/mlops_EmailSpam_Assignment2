@@ -7,32 +7,46 @@ from sklearn.model_selection import RandomizedSearchCV, RepeatedKFold
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, confusion_matrix
 import numpy as np
 import matplotlib.pyplot as plt
+
+# import for roc_curve
+from sklearn.metrics import roc_curve, auc
+# import to serilialize objects
 import joblib
+# import for mlflow
 import mlflow
 from mlflow.models import infer_signature
-
 import mlflow.sklearn
 import os
 
-
+# Function to train the dataset and return best model and best params
+# 
 def perform_random_search(X_train, y_train):
-    """
-    Performs randomized hyperparameter tuning for Logistic Regression.
-    Returns best model and best parameters.
-    """
-    # count_vect=CountVectorizer()
-
+    
+    # Performs randomized hyperparameter tuning for Logistic Regression.
+    # Returns best model and best parameters.
+    
+    # Vectorizer and Classifier defined for Pipeline
     pipeline = Pipeline([
         ('vectorizer', CountVectorizer()),
         ('clf', LogisticRegression(solver="liblinear", max_iter=1000))
     ])
 
+    # 'vectorizer__ngram_range' : (1, 1) = unigrams only, (1, 2) = unigrams + bigrams
+    
+    #  max_df does not consider terms that appear often 
+    # i.e terms are ignored if apperaed in more than [X]% of documents (uninformative words).
+    
+    # C is regularization strength for models like LogisticRegression
     param_dist = {
         'vectorizer__ngram_range': [(1, 1), (1, 2)],
         'vectorizer__max_df': [0.5, 0.75, 1.0],
         'clf__C': np.logspace(-3, 2, 6),
         'clf__penalty': ['l1', 'l2']
     }
+
+    # cross-validation With n-spilts as 10 folds
+    # n_repeats --> repeating 3 times
+    # random_state=1 --> Random shuffling for Reproducibility
 
     cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
 
@@ -47,22 +61,24 @@ def perform_random_search(X_train, y_train):
         random_state=42
     )
 
-    save_path = "saved_models/roc_curve.png"
-
-    # save_model(best_model, path="saved_models/best_model.pkl")
-
+    save_path = "saved_models/roc_curve.png"   
     search.fit(X_train, y_train)
-       # Save the best CountVectorizer 
+
+    # Serializing  the best CountVectorizer 
     best_vectorizer = search.best_estimator_.named_steps['vectorizer']
     with open("saved_models/count_vectorizer.pkl", "wb") as vec_file:
         joblib.dump(best_vectorizer, vec_file)
 
     return search.best_estimator_, search.best_params_
 
+
+# Function to return metrics 
+# accuracy, precision, recall, f1_score, auc_roc,confusion_matrix
+
 def evaluate_classification(model, X_test, y_test):
-    """
-    Evaluates a binary classification model and returns key metrics.
-    """
+    
+    # Evaluates a binary classification model and returns key metrics.
+    
     y_pred = model.predict(X_test)
     y_proba = model.predict_proba(X_test)[:, 1] if hasattr(model, "predict_proba") else None
 
@@ -75,8 +91,7 @@ def evaluate_classification(model, X_test, y_test):
         "confusion_matrix": confusion_matrix(y_test, y_pred)
     }
 
-import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc
+
 
 def plot_roc_curve(model, X_test, y_test, save_path):
     """Plot ROC curve and return AUC score."""

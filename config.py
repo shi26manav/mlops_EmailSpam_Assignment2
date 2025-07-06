@@ -1,3 +1,3 @@
-CSV_PATH = "Dataset/emails.csv"
-TEXT_COL = "text"
-LABEL_COL = "spam"
+CSV_PATH = "Dataset/sms.csv"
+TEXT_COL = "sms"
+LABEL_COL = "label"
